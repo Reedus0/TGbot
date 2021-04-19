@@ -1,7 +1,6 @@
 import telebot
 import config
-from dbWorker import set_state, get_current_state
-from dbWritter import commit
+from dbworker import set_state, get_current_state, commit
 
 client = telebot.TeleBot(config.config["token"])
 
