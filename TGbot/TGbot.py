@@ -1,10 +1,9 @@
 import telebot
 import config
-from dbworker import set_state, get_current_state
+from dbWorker import set_state, get_current_state
+from dbWritter import commit
 
 client = telebot.TeleBot(config.config["token"])
-
-gotToken = False
 
 @client.message_handler(commands=["start"])
 def login(message):
@@ -13,6 +12,8 @@ def login(message):
 
 @client.message_handler(func=lambda message: get_current_state(message.chat.id) == config.States.S_LOGIN)
 def messageToUser(message):
+    text = message.text
+    commit(text)
     client.send_message(message.chat.id, 'Thank you for contacting us!')
     set_state(message.chat.id, config.States.S_END)
 
