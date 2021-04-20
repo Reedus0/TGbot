@@ -2,6 +2,9 @@ import json
 import config
 import sqlite3
 
+conn = sqlite3.connect("db.sqlite3")
+cursor = conn.cursor()
+
 def get_current_state(user_id):
     with open(config.config['json_file'], "r") as db:
         try:

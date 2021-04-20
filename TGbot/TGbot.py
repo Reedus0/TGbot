@@ -1,11 +1,11 @@
 import telebot
 import config
 from dbworker import set_state, get_current_state, commit
-
 client = telebot.TeleBot(config.config["token"])
 
 @client.message_handler(commands=["start"])
 def login(message):
+
     set_state(message.chat.id, config.States.S_LOGIN)
     client.send_message(message.chat.id, 'Write your message')
 
