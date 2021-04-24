@@ -3,8 +3,8 @@ import os
 dir = os.path.abspath(os.curdir) + "\database.json"
 
 config = {
-    "name": "@TGtestbot",
-    "token": "1622866884:AAHVFMLXDhxKVk2RvDIIUmqZyaC1PPpLAIo",
+    "name": "YourBotName",
+    "token": "yourToken",
     "json_file": dir,
 }
 
