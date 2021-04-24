@@ -1,4 +1,3 @@
 # TelegramContactBot
 
-TGbot to contact you.
-Now in developmentg
+TGbot to contact with you.
